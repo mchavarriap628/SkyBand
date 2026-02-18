@@ -1,6 +1,5 @@
 //Este archivo es la configuración del servidor express, pero no lo enciende.
 
-//Aquí estamos llamando los modulos o dependencias que ocupamos para crear la aplición o servidor.
 const express = require("express");
 const cors = require("cors");
 
