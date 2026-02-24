@@ -9,12 +9,13 @@ const connectDB = require("./config/db");
 require("dotenv").config();
 
 //Por alguna razón node no resolvía el connection string, con estos DNS sí funcionó.
-//Iniciamos la conexión con la base de datos
 const dns = require("node:dns/promises");
 dns.setServers(["1.1.1.1", "8.8.8.8"]);
+
+//Iniciamos la conexión con la base de datos.
 connectDB();
 
-//Esta constante sirve para definir el puerto del server local, si tengo uno en mis variables de entorno lo uso, si no será 3000
+//Esta constante sirve para definir el puerto del server local, si tengo uno en mis variables de entorno lo uso, si no será 3000.
 const PORT = process.env.PORT || 3000;
 
 //aquí se ejecuta y comienza a correr el server.
