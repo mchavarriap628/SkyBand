@@ -19,6 +19,9 @@ app.use("/api/instruments", instrumentRoutes);
 const flightRoutes = require("./routes/flightRoutes");
 app.use("/api/flights",flightRoutes);
 
+const reservationRoutes = require("./routes/reservationRoutes");
+app.use("/api/reservations", reservationRoutes);
+
 // Ruta de prueba o index
 app.get("/", (req, res) => {
   res.json({
