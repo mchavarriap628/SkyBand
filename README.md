@@ -44,3 +44,33 @@ Creamos la aplicación app.js y el server server.js, tambipen db.js que va a ser
 
 Con este comando podemos ejecutar el server: 
 npm run dev
+
+---------------------------------------------------------------------------------------------------------------------
+
+-> Agregar usuarios en postman
+
+POST http://localhost:5000/api/users
+
+{
+  "name": "Manuel",
+  "email": "manuel@email.com",
+  "password": "123456"
+}
+
+-> Ver usuarios en postman
+
+GET http://localhost:5000/api/users
+
+-> Borrar usuario en postman por ID
+
+DELETE http://localhost:5000/api/users/699f5fee3fa02b13a62a2d59 (se debe cambiar el ID)
+
+-> actualizar usuarios en postman por ID
+
+PUT http://localhost:5000/api/users/699f61bf3fa02b13a62a2d5e (se debe cambiar el ID)
+
+{
+  "name": "informacion nueva",
+  "email": "email-actualizado@email.com",
+  "password": "123456"
+}

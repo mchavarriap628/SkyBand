@@ -9,7 +9,17 @@ app.use(cors());
 //Eso es para que el servidor entienda datos en formato json, tiene que ser así porque estamos usando mongodb.
 app.use(express.json());
 
-// Ruta de prueba
+//Rutas del CRUD
+const userRoutes = require("./routes/userRoutes");
+app.use("/api/users", userRoutes);
+
+const instrumentRoutes = require("./routes/instrumentRoutes");
+app.use("/api/instruments", instrumentRoutes);
+
+const flightRoutes = require("./routes/flightRoutes");
+app.use("/api/flights",flightRoutes);
+
+// Ruta de prueba o index
 app.get("/", (req, res) => {
   res.json({
     test: "No estoy en la playa, esto es una bañera."
@@ -18,3 +28,6 @@ app.get("/", (req, res) => {
 
 //Exportamos la aplicación para poder usarla desde otros archivos.
 module.exports = app;
+
+
+
