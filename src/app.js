@@ -22,6 +22,10 @@ app.use("/api/flights",flightRoutes);
 const reservationRoutes = require("./routes/reservationRoutes");
 app.use("/api/reservations", reservationRoutes);
 
+//Ruta LOGIN
+const authRoutes = require("./routes/authRoutes");
+app.use("/api/auth", authRoutes);
+
 // Ruta de prueba o index
 app.get("/", (req, res) => {
   res.json({

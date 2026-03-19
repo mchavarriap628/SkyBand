@@ -1,12 +1,28 @@
 const User = require("../models/User");
+const bcrypt = require("bcryptjs");
 
-// CREAR USUARIO
+// CREAR USUARIO - PASSWORD HASHEADO
 exports.createUser = async (req, res) => {
   try {
-    const user = await User.create(req.body);
-    res.status(201).json(user);
+    //const user = await User.create(req.body);
+    //res.status(201).json(user);
+
+    const { name, email, password } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const user = new User({
+      name,
+      email,
+      password: hashedPassword
+    });
+
+    const savedUser = await user.save();
+
+    res.status(201).json(savedUser);
+
+
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(500).json({ message: "Error creando usuario" });
   }
 };
 
