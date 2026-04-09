@@ -1,0 +1,111 @@
+{
+  "info": {
+    "_postman_id": "1f916071-e481-4b92-9bc5-98410d417150",
+    "name": "flights",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53499714",
+    "_collection_link": "https://go.postman.co/collection/53499714-1f916071-e481-4b92-9bc5-98410d417150?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Crear vuelo",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"origin\": \"San José\",\r\n  \"destination\": \"Madrid\",\r\n  \"date\": \"2026-10-15T08:30:00Z\",\r\n  \"availableSeats\": 120\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/flights",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "flights"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obtener Todos los Vuelos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/flights",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "flights"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar un Vuelo ",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"availableSeats\": 50\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/flights/69d6e8e42db981e07f7d9591",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "flights",
+            "69d6e8e42db981e07f7d9591"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar un Vuelo",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/flights/69d6e8e42db981e07f7d9591",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "flights",
+            "69d6e8e42db981e07f7d9591"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

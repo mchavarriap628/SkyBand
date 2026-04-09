@@ -1,0 +1,120 @@
+{
+  "info": {
+    "_postman_id": "29b41b13-d77e-42f2-ba87-04e38fd63f47",
+    "name": "reservations",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53499714",
+    "_collection_link": "https://go.postman.co/collection/53499714-29b41b13-d77e-42f2-ba87-04e38fd63f47?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Crear Reservación",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"userId\": \"69bb497c1d6a85f9e4c6cdaa\",\r\n  \"flightId\": \"69bb4cee1d6a85f9e4c6cdce\",\r\n  \"instruments\": [\r\n    \"69bb4c3d1d6a85f9e4c6cdc0\"\r\n  ],\r\n  \"type\": \"individual\",\r\n  \"status\": \"active\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/reservations",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "reservations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obtener Todas las Reservas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/reservations",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "reservations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar una Reserva",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"status\": \"cancelled\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/reservations/69bb4d611d6a85f9e4c6cdd7",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "reservations",
+            "69bb4d611d6a85f9e4c6cdd7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar Reserva",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/reservations/69bb4d611d6a85f9e4c6cdd7",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "reservations",
+            "69bb4d611d6a85f9e4c6cdd7"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
