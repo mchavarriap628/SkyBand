@@ -54,9 +54,16 @@ exports.getUserById = async (req, res) => {
 // ACTUALIZAR UN USUARIO POR ID
 exports.updateUser = async (req, res) => {
   try {
+
+    const updateData = { ...req.body };
+    //Si viene password, lo encriptamos
+    if (updateData.password) {
+      updateData.password = await bcrypt.hash(updateData.password, 10);
+    }
+
     const user = await User.findByIdAndUpdate(
       req.params.id,
-      req.body,
+      updateData,
       { new: true }
     );
 
@@ -65,6 +72,7 @@ exports.updateUser = async (req, res) => {
     }
 
     res.json(user);
+
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
