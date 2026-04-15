@@ -52,3 +52,17 @@ Con este comando ejecutamos un test:
 -> npm test
 
 ---------------------------------------------------------------------------------------------------------------------
+
+--- Comandos para Git ----
+
+-> Agregar cambios
+    git add .
+
+-> Commit
+    git commit -m "Se realizó un middleware para autenticar las consultas a Reservas y se realizó una prueba unitaria."
+
+-> Subir cambios a GitHub
+    git push
+
+-> Bajar de GitHub version más reciente
+    git pull origin main
